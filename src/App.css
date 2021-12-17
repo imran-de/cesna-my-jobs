@@ -12,3 +12,19 @@ h1,h2,h3,h4,h5,h6{
       color: #000;
       line-height: 24px;
   }
+.title{
+    position: relative;
+}
+.title:before{
+   content: '';
+   width: 80px!important;
+    
+    color: #E40043;
+    background-color:#E40043;
+    ;
+    height: 4px;
+    font-size: 36px;
+    position: absolute;
+    bottom: 0px;
+    
+}

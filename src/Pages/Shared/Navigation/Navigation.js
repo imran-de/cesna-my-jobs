@@ -1,10 +1,10 @@
 import React from 'react';
-import { AppBar, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Button, Container, IconButton, Link, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box } from '@mui/system';
 import logo from '../../../Images/cesna.png';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Search Jobs', 'Job Seekers', 'Employers', 'About Us', 'Careers', 'Contact Us'];
 const settings = ['Register', 'Login', 'Profile', 'Dashboard', 'Logout'];
 const Navigation = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -68,7 +68,7 @@ const Navigation = () => {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <MenuItem style={{ width: '100vw', backgroundColor: '#026484', color: '#F9F9F9' }} key={page} onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">{page}</Typography>
                                     </MenuItem>
                                 ))}
@@ -82,7 +82,7 @@ const Navigation = () => {
                         >
                             <img src={logo} width='100px' alt="Cesna Site logo" />
                         </Typography>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', paddingRight: '20px' }}>
                             {pages.map((page) => (
                                 <Button
                                     key={page}
@@ -117,8 +117,10 @@ const Navigation = () => {
                                 onClose={handleCloseUserMenu}
                             >
                                 {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{setting}</Typography>
+                                    <MenuItem key={setting}>
+                                        <Typography textAlign="center">
+                                            <Link to={`/${setting.toLowerCase()}`}>{setting}</Link>
+                                        </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
